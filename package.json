@@ -1,0 +1,27 @@
+{
+	"name": "gutenboot",
+	"version": "1.0.0",
+	"description": "A Bootstrap Theme for Gutenberg (the Block Editor)",
+	"prettier": "@wordpress/prettier-config",
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"scripts": {
+		"build": "wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start"
+	},
+	"author": "K.J. Roelke",
+	"license": "GPL-2.0-or-later",
+	"dependencies": {
+		"bootstrap": "^5.3.3"
+	},
+	"devDependencies": {
+		"@wordpress/blocks": "^14.7.0",
+		"@wordpress/edit-post": "^8.18.0",
+		"@wordpress/icons": "^10.18.0",
+		"@wordpress/scripts": "^30.8.1",
+		"webpack-remove-empty-scripts": "^1.0.4"
+	}
+}

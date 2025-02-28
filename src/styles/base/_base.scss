@@ -1,0 +1,14 @@
+@use "../abstracts/variables" as v;
+
+:root {
+	--font-headings: #{v.$font-headings};
+	--font-body: #{v.$font-body};
+	--font-serif: #{v.$font-serif};
+
+	--transition-standard: #{v.$transition-standard};
+}
+
+ul,
+ol {
+	margin-left: 1.25rem;
+}

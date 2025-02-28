@@ -1,0 +1,310 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"color": {
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"duotone": [],
+			"gradients": [],
+			"palette": [
+				{
+					"color": "var(--bs-primary)",
+					"name": "Primary",
+					"slug": "primary"
+				},
+				{
+					"color": "var(--bs-secondary)",
+					"name": "Secondary",
+					"slug": "secondary"
+				},
+				{
+					"color": "var(--bs-success)",
+					"name": "Success",
+					"slug": "success"
+				},
+				{
+					"color": "var(--bs-info)",
+					"name": "Info",
+					"slug": "info"
+				},
+				{
+					"color": "var(--bs-warning)",
+					"name": "Warning",
+					"slug": "warning"
+				},
+				{
+					"color": "var(--bs-danger)",
+					"name": "Danger",
+					"slug": "danger"
+				},
+				{
+					"color": "var(--bs-light)",
+					"name": "Light",
+					"slug": "light"
+				},
+				{
+					"color": "var(--bs-dark)",
+					"name": "Dark",
+					"slug": "dark"
+				}
+			]
+		},
+		"blocks": {
+			"core/group": {
+				"background": {
+					"backgroundImage": true,
+					"backgroundSize": true
+				}
+			}
+		},
+		"dimensions": {
+			"aspectRatio": true
+		},
+		"layout": {
+			"allowCustomContentAndWideSize": false,
+			"allowEditing": true
+		},
+		"shadow": {
+			"defaultPresets": false
+		},
+		"spacing": {
+			"blockGap": true,
+			"customSpacingSize": false,
+			"defaultSpacingSizes": false,
+			"margin": true,
+			"padding": true,
+			"spacingSizes": [
+				{
+					"name": "None",
+					"size": "0",
+					"slug": "none"
+				},
+				{
+					"name": "Extra Small",
+					"size": "var(--cno-bs--spacer--xs)",
+					"slug": "xs"
+				},
+				{
+					"name": "Small",
+					"size": "var(--cno-bs--spacer--sm)",
+					"slug": "sm"
+				},
+				{
+					"name": "Base",
+					"size": "var(--cno-bs--spacer--base)",
+					"slug": "base"
+				},
+				{
+					"name": "Large",
+					"size": "var(--cno-bs--spacer--lg)",
+					"slug": "lg"
+				},
+				{
+					"name": "Extra Large",
+					"size": "var(--cno-bs--spacer--xl)",
+					"slug": "xl"
+				}
+			]
+		},
+		"typography": {
+			"customFontSize": false,
+			"defaultFontSizes": false,
+			"dropCap": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "gill-sans-nova, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+					"name": "Gill Sans Nova",
+					"slug": "gill-sans-nova"
+				},
+				{
+					"fontFamily": "pill-gothic-300mg, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+					"name": "Pill Gothic 300mg",
+					"slug": "pill-gothic-300mg"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Root",
+					"size": "16px",
+					"slug": "root"
+				},
+				{
+					"fluid": true,
+					"name": "Base",
+					"size": "1.35rem",
+					"slug": "base"
+				},
+				{
+					"name": "H6",
+					"size": "var(--cno-bs--font-size--h6)",
+					"slug": "h6"
+				},
+				{
+					"name": "H5",
+					"size": "var(--cno-bs--font-size--h5)",
+					"slug": "h5"
+				},
+				{
+					"name": "H4",
+					"size": "var(--cno-bs--font-size--h4)",
+					"slug": "h4"
+				},
+				{
+					"name": "H3",
+					"size": "var(--cno-bs--font-size--h3)",
+					"slug": "h3"
+				},
+				{
+					"name": "H2",
+					"size": "var(--cno-bs--font-size--h2)",
+					"slug": "h2"
+				},
+				{
+					"name": "H1",
+					"size": "var(--cno-bs--font-size--h1)",
+					"slug": "h1"
+				}
+			],
+			"fontWeight": true,
+			"lineHeight": false,
+			"textDecoration": false
+		}
+	},
+	"styles": {
+		"spacing": {
+			"margin": {
+				"bottom": "0",
+				"left": "0",
+				"right": "0",
+				"top": "0"
+			},
+			"padding": {
+				"bottom": "0",
+				"left": "0",
+				"right": "0",
+				"top": "0"
+			},
+			"blockGap": "var:preset|spacing|base"
+		},
+		"blocks": {
+			"core/heading": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|pill-gothic-300-mg"
+				}
+			},
+			"core/list": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontSize": "var:preset|font-size|base"
+				}
+			},
+			"core/list-item": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontSize": "var:preset|font-size|base"
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontSize": "var:preset|font-size|base"
+				}
+			},
+			"core/buttons": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontSize": "var:preset|font-size|base"
+				}
+			},
+			"core/button": {
+				"border": {
+					"radius": "var(--bs-border-radius)",
+					"width": "var(--bs-btn-border-width)",
+					"color": "var(--bs-btn-border-color)"
+				},
+				"spacing": {
+					"padding": {
+						"top": "var(--bs-btn-padding-y)",
+						"right": "var(--bs-btn-padding-x)",
+						"bottom": "var(--bs-btn-padding-y)",
+						"left": "var(--bs-btn-padding-x)"
+					},
+					"blockGap": "var:preset|spacing|base"
+				},
+				"shadow": "var(--bs-btn-box-shadow)",
+				"typography": {
+					"fontFamily": "var(--bs-btn-font-family)",
+					"fontSize": "var(--bs-btn-font-size)",
+					"fontWeight": "var(--bs-btn-font-weight)",
+					"lineHeight": "var(--bs-btn-line-height)"
+				},
+				"color": {
+					"background": "var(--bs-btn-bg-color)",
+					"text": "var(--bs-btn-color)"
+				}
+			},
+			"core/cover": {
+				"spacing": {
+					"padding": {
+						"top": "0",
+						"right": "0",
+						"bottom": "0",
+						"left": "0"
+					},
+					"blockGap": "var:preset|spacing|base"
+				}
+			},
+			"core/group": {
+				"spacing": {
+					"blockGap": "var:preset|spacing|base"
+				}
+			}
+		},
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontSize": "var:preset|font-size|h-1"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontSize": "var:preset|font-size|h-2"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontSize": "var:preset|font-size|h-3"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontSize": "var:preset|font-size|h-4"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontSize": "var:preset|font-size|h-5"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontSize": "var:preset|font-size|h-6"
+				}
+			},
+			"heading": {
+				"typography": {
+					"fontFamily": "var:preset|font-family|pill-gothic-300-mg"
+				}
+			}
+		},
+		"typography": {
+			"fontSize": "var:preset|font-size|base"
+		}
+	}
+}
