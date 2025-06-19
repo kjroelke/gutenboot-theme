@@ -1,17 +1,7 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );
 const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 
-
-const blockEditor = [
-	'registerBlockVariations',
-	'unregisterBlocks',
-	'editDefaultBlocks',
-];
-
-/**
- * For SCSS files (no leading `_`)
- * Array of strings modeled after scss names (e.g. 'we-are-choctaw')
- */
+const blockEditor = [ 'editDefaultBlocks' ];
 const styleSheets = []; // for scss only
 
 module.exports = {
@@ -19,7 +9,8 @@ module.exports = {
 	...{
 		entry: () => {
 			return {
-				global: `./src/index.js`,
+				...defaultConfig.entry(),
+				global: `./src/index.ts`,
 				'vendors/bootstrap': `./src/js/vendors/bootstrap.js`,
 				...addEntries( blockEditor, 'admin' ),
 			};

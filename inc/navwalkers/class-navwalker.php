@@ -23,7 +23,6 @@ namespace GutenBoot;
  * Based on the Bootscore 5 Nav Walker
  *
  * @link https://github.com/bootscore/bootscore/blob/main/inc/class-bootstrap-5-navwalker.php
- *
  */
 class Navwalker extends \Walker_Nav_Menu {
 	/** The current nav item

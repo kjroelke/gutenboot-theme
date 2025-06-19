@@ -9,24 +9,16 @@ namespace GutenBoot;
 
 /** Builds the Theme */
 class Theme_Init {
-	/** The type of site
-	 *
-	 * @var 'nation'|'commerce' $theme_type
+	/**
+	 * Constructor Function that also loads the proper favicon package
 	 */
-	private string $theme_type;
-
-	/** Constructor Function that also loads the proper favicon package
-	 *
-	 * @param 'nation'|'commerce' $type the type of site to load favicons for.
-	 */
-	public function __construct( string $type = 'nation' ) {
-		$this->theme_type = $type;
+	public function __construct() {
 		$this->load_required_files();
-		// $this->disable_discussion();
+		$this->disable_discussion();
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_frontend_assets' ) );
 		add_action( 'enqueue_block_assets', array( $this, 'enqueue_global_assets' ) );
 		add_action( 'after_setup_theme', array( $this, 'theme_support' ) );
-		// add_action( 'init', array( $this, 'alter_post_types' ) );
+		add_action( 'init', array( $this, 'alter_post_types' ) );
 		/**
 		 * Filter the priority of the Yoast SEO metabox
 		 */
@@ -43,22 +35,21 @@ class Theme_Init {
 		$base_path = get_template_directory() . '/inc';
 
 		/** Loads the Theme Functions File (to keep the actual functions.php file clean) */
-		require_once $base_path . '/theme/theme-functions.php';
+		require_once $base_path . '/theme-functions.php';
 
 		$asset_loaders = array(
 			'enum-enqueue-type',
 			'class-asset-loader',
 		);
 		foreach ( $asset_loaders as $asset_loader ) {
-			require_once $base_path . "/theme/asset-loader/{$asset_loader}.php";
+			require_once $base_path . "/asset-loader/{$asset_loader}.php";
 		}
 
 		$navwalkers = array(
 			'navwalker',
-			// 'mega-menu',
 		);
 		foreach ( $navwalkers as $navwalker ) {
-			require_once $base_path . "/theme/navwalkers/class-{$navwalker}.php";
+			require_once $base_path . "/navwalkers/class-{$navwalker}.php";
 		}
 		$utility_files = array(
 			'allow-svg'         => 'Allow_SVG',
@@ -66,7 +57,7 @@ class Theme_Init {
 			'gutenberg-handler' => 'Gutenberg_Handler',
 		);
 		foreach ( $utility_files as $utility_file => $class_name ) {
-			require_once $base_path . "/theme/class-{$utility_file}.php";
+			require_once $base_path . "/class-{$utility_file}.php";
 			$class = __NAMESPACE__ . '\\' . $class_name;
 			new $class();
 		}
@@ -170,8 +161,8 @@ class Theme_Init {
 
 		register_nav_menus(
 			array(
-				'primary_menu' => __( 'Primary Menu', 'cno' ),
-				'footer_menu'  => __( 'Footer Menu', 'cno' ),
+				'primary_menu' => 'Primary Menu',
+				'footer_menu'  => 'Footer Menu',
 			)
 		);
 	}
@@ -195,9 +186,6 @@ class Theme_Init {
 	private function disable_post_type_support( string $post_type ) {
 		$supports = array(
 			'comments',
-			'trackbacks',
-			'revisions',
-			'author',
 		);
 		foreach ( $supports as $support ) {
 			if ( post_type_supports( $post_type, $support ) ) {

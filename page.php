@@ -6,12 +6,5 @@
  */
 
 get_header();
-?>
-
-<main <?php post_class( array( 'site-content', "page-{$post->post_name}" ) ); ?>>
-	<article class="container">
-		<?php the_content(); ?>
-	</article>
-</main>
-<?php
+the_content();
 get_footer();

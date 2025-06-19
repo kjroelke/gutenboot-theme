@@ -10,5 +10,5 @@
 use GutenBoot\Theme_Init;
 
 /** Get the theme init class */
-require_once get_template_directory() . '/inc/theme/class-theme-init.php';
-new Theme_Init( 'nation' );
+require_once get_template_directory() . '/inc/class-theme-init.php';
+new Theme_Init();
