@@ -94,7 +94,11 @@ class FlexReverse {
 				}
 				const isDisabled =
 					attributes.layout && attributes.layout.type !== 'flex';
-				const direction = getReversedDirection( { attributes, name } );
+				const direction = getReversedDirection( {
+					attributes,
+					name,
+					value: isDirectionReversed,
+				} );
 				const blockStyles = props.style || {};
 				if ( null !== direction ) {
 					// If the direction is not null, we set the flexDirection style
@@ -124,8 +128,9 @@ class FlexReverse {
 		},
 		'addFlexDirectionToggle'
 	);
+
 	/**
-	 * Adds a toggle control to the block inspector to reverse the flex direction
+	 * Adds inline styles to the block in the Editor view to reverse the flex direction
 	 */
 	private addInlineStyles = createHigherOrderComponent(
 		( BlockListBlock ) => {
@@ -134,7 +139,11 @@ class FlexReverse {
 				if ( ! this.isAllowed( name ) ) {
 					return <BlockListBlock { ...props } />;
 				}
-				const direction = getReversedDirection( { attributes, name } );
+				const direction = getReversedDirection( {
+					attributes,
+					name,
+					value: attributes.isDirectionReversed ?? false,
+				} );
 				const blockStyles = props.style || {};
 				if ( null !== direction ) {
 					// If the direction is not null, we set the flexDirection style
@@ -191,6 +200,7 @@ type GetReversedDirectionParams =
 					type: 'constrained' | 'flex' | 'default' | 'grid';
 					orientation: 'horizontal' | 'vertical';
 				};
+				className?: string;
 			};
 			value?: boolean;
 			name: 'core/group';
@@ -198,6 +208,7 @@ type GetReversedDirectionParams =
 	| {
 			attributes: {
 				isDirectionReversed?: boolean;
+				className?: string;
 			};
 			value?: boolean;
 			name: 'core/columns';
@@ -207,6 +218,7 @@ type GetReversedDirectionParams =
  * Returns the CSS flex-direction value based on the attributes and toggle value.
  * @param attributes passed attributes from the block
  * @param value the value of the toggle
+ *  @param name the name of the block
  * @returns
  */
 function getReversedDirection( {
@@ -215,15 +227,17 @@ function getReversedDirection( {
 	name,
 }: GetReversedDirectionParams ): string | null {
 	if ( 'core/group' === name ) {
-		if ( 'flex' !== attributes.layout.type ) {
+		if ( 'flex' !== attributes.layout.type || undefined === value ) {
 			return null;
 		}
 		if ( false === value ) {
-			if ( 'vertical' === attributes.layout.orientation ) {
-				return 'column-reverse';
-			} else {
-				return 'row-reverse';
-			}
+			return 'vertical' === attributes.layout.orientation
+				? 'column'
+				: 'row';
+		} else {
+			return 'vertical' === attributes.layout.orientation
+				? 'column-reverse'
+				: 'row-reverse';
 		}
 	}
 	if ( 'core/columns' === name ) {

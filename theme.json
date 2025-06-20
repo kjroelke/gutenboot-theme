@@ -2,7 +2,7 @@
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"version": 3,
 	"settings": {
-		"appearanceTools": false,
+		"appearanceTools": true,
 		"color": {
 			"custom": false,
 			"customDuotone": false,
@@ -122,26 +122,20 @@
 				{
 					"fontFamily": "gill-sans-nova, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
 					"name": "Gill Sans Nova",
-					"slug": "gill-sans-nova"
+					"slug": "body"
 				},
 				{
 					"fontFamily": "pill-gothic-300mg, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
 					"name": "Pill Gothic 300mg",
-					"slug": "pill-gothic-300mg"
+					"slug": "headings"
 				}
 			],
 			"fontSizes": [
 				{
-					"slug": "root",
-					"size": "1rem",
-					"name": "Root",
-					"fluid": false
-				},
-				{
 					"slug": "base",
 					"size": "1.35rem",
 					"name": "Body",
-					"fluid": false
+					"fluid": true
 				},
 				{
 					"slug": "h6",
@@ -205,24 +199,24 @@
 		"blocks": {
 			"core/heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|pill-gothic-300-mg"
+					"fontFamily": "var:preset|font-family|headings"
 				}
 			},
 			"core/list": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontFamily": "var:preset|font-family|body",
 					"fontSize": "var:preset|font-size|base"
 				}
 			},
 			"core/list-item": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontFamily": "var:preset|font-family|body",
 					"fontSize": "var:preset|font-size|base"
 				}
 			},
 			"core/paragraph": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontFamily": "var:preset|font-family|body",
 					"fontSize": "var:preset|font-size|base"
 				},
 				"spacing": {
@@ -234,7 +228,7 @@
 			},
 			"core/buttons": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontFamily": "var:preset|font-family|body",
 					"fontSize": "var:preset|font-size|base"
 				}
 			},
@@ -254,7 +248,7 @@
 					"blockGap": "var:preset|spacing|base"
 				},
 				"typography": {
-					"fontFamily": "var:preset|font-family|gill-sans-nova",
+					"fontFamily": "var:preset|font-family|body",
 					"fontSize": "var:preset|font-size|base"
 				},
 				"color": {
@@ -297,7 +291,7 @@
 			},
 			"h4": {
 				"typography": {
-					"fontSize": "var:preset|font-size|g-4"
+					"fontSize": "var:preset|font-size|h-4"
 				}
 			},
 			"h5": {
@@ -312,7 +306,7 @@
 			},
 			"heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|pill-gothic-300-mg",
+					"fontFamily": "var:preset|font-family|headings",
 					"lineHeight": "1.2",
 					"fontWeight": "700"
 				},
@@ -344,7 +338,7 @@
 		"typography": {
 			"fontSize": "var:preset|font-size|base",
 			"lineHeight": "1.5",
-			"fontFamily": "var:preset|font-family|gill-sans-nova"
+			"fontFamily": "var:preset|font-family|body"
 		}
 	}
 }
